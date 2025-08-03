@@ -3,17 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Jeumpa Auto Spray - Bengkel Spesialis Body Repair dan Cat Mobil Profesional di Banda Aceh." />
+
     <title>Jeumpa Auto Spray</title>
+
+    <!-- CSS & Font -->
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Montserrat:wght@400;700&family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet" />
   </head>
+
   <body>
+    <!-- Navigasi -->
     <nav class="navbar">
       <div class="navbar-container">
         <div class="logo">Jeumpa Auto Spray</div>
-
-        <!-- Ikon hamburger -->
-        <div class="hamburger" onclick="toggleMenu()"=;</div>
-
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
         <ul class="nav-links" id="navMenu">
           <li><a href="#galeri">Galeri</a></li>
           <li><a href="#kontak">Kontak</a></li>
@@ -21,26 +30,19 @@
       </div>
     </nav>
 
+    <!-- Hero Section -->
     <header class="hero">
-      <div class="hero-content">
+      <div class="hero-content container">
         <h1>Jeumpa Auto Spray</h1>
         <p>Spesialis Body Repair & Repaint Profesional</p>
         <a href="#galeri" class="hero-button">Lihat Galeri</a>
       </div>
     </header>
 
-    <header>
-      <h1>Jeumpa Auto Spray</h1>
-      <p>Jasa Perbaikan Body & Cat Mobil</p>
-      <nav>
-        <a href="#tentang">Tentang Kami</a>
-        <a href="#layanan">Layanan</a>
-        <a href="#kontak">Kontak</a>
-      </nav>
-    </header>
-
-    <main>
-      <section id="tentang">
+    <!-- Konten Utama -->
+    <main class="container">
+      <!-- Tentang Kami -->
+      <section id="tentang" data-aos="fade-up" data-aos-delay="200">
         <h2>Tentang Kami</h2>
         <p>
           Jeumpa Auto Spray adalah bengkel spesialis perbaikan bodi mobil dan
@@ -48,7 +50,8 @@
         </p>
       </section>
 
-      <section id="layanan">
+      <!-- Layanan -->
+      <section id="layanan" data-aos="fade-up" data-aos-delay="200">
         <h2>Layanan</h2>
         <ul>
           <li>Perbaikan body mobil penyok</li>
@@ -58,7 +61,8 @@
         </ul>
       </section>
 
-      <section id="galeri">
+      <!-- Galeri -->
+      <section id="galeri" data-aos="fade-up" data-aos-delay="200">
         <h2>Galeri Hasil Kerja</h2>
         <div class="galeri-container">
           <div class="foto-item">
@@ -76,7 +80,8 @@
         </div>
       </section>
 
-      <section id="kontak">
+      <!-- Kontak -->
+      <section id="kontak" data-aos="fade-up" data-aos-delay="200">
         <h2>Kontak Kami</h2>
         <p>Lokasi: Jl. Contoh No. 123, Banda Aceh</p>
         <p>WhatsApp: 0895-4030-10139</p>
@@ -93,10 +98,15 @@
       <img class="lightbox-content" id="lightbox-img" />
     </div>
 
+    <!-- Footer -->
     <footer>
       <p>&copy; 2025 Jeumpa Auto Spray. All rights reserved.</p>
     </footer>
 
+    <!-- Tombol Scroll ke Atas -->
+    <button id="scrollTopBtn" title="Kembali ke atas">↑</button>
+
+    <!-- Script JS -->
     <script>
       const lightbox = document.getElementById("lightbox");
       const lightboxImg = document.getElementById("lightbox-img");
@@ -115,7 +125,6 @@
         lightbox.style.display = "none";
       });
 
-      // Klik di luar gambar untuk menutup
       lightbox.addEventListener("click", (e) => {
         if (e.target === lightbox) {
           lightbox.style.display = "none";
@@ -126,6 +135,27 @@
         const nav = document.getElementById("navMenu");
         nav.classList.toggle("show");
       }
+
+      const scrollBtn = document.getElementById("scrollTopBtn");
+      window.onscroll = function () {
+        if (
+          document.body.scrollTop > 300 ||
+          document.documentElement.scrollTop > 300
+        ) {
+          scrollBtn.style.display = "block";
+        } else {
+          scrollBtn.style.display = "none";
+        }
+      };
+
+      scrollBtn.onclick = function () {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      };
+    </script>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
     </script>
   </body>
 </html>
