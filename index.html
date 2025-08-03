@@ -6,12 +6,11 @@
     <meta
       name="description"
       content="Jeumpa Auto Spray - Bengkel Spesialis Body Repair dan Cat Mobil Profesional di Banda Aceh." />
-
     <title>
       Jeumpa Auto Spray | Spesialis Cat & Body Repair Mobil Banda Aceh
     </title>
 
-    <!-- ✅ Open Graph Meta Tags -->
+    <!-- Open Graph Meta Tags -->
     <meta
       property="og:title"
       content="Jeumpa Auto Spray | Spesialis Cat & Body Repair Mobil Banda Aceh" />
@@ -25,25 +24,24 @@
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="id_ID" />
 
-    <!-- CSS & Font -->
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Montserrat:wght@400;700&family=Poppins:wght@300;400;600&display=swap"
       rel="stylesheet" />
   </head>
-
   <body>
-    <!-- Navigasi -->
+    <!-- Navigation -->
     <nav class="navbar">
-      <div class="navbar-container">
-        <div class="logo">
+      <div class="navbar-container container">
+        <a href="/" class="logo">
           <img src="images/logo.jpg" alt="Logo Jeumpa" class="logo-img" />
           <span>Jeumpa Auto Spray</span>
+        </a>
+        <div class="hamburger" id="hamburgerMenu">
+          <span></span><span></span><span></span>
         </div>
-
-        <div class="hamburger" onclick="toggleMenu()">☰</div>
-
         <ul class="nav-links" id="navMenu">
           <li><a href="#galeri">Galeri</a></li>
           <li><a href="#kontak">Kontak</a></li>
@@ -53,16 +51,19 @@
 
     <!-- Hero Section -->
     <header class="hero">
-      <div class="hero-content container">
+      <div
+        class="hero-content container"
+        data-aos="fade-up"
+        data-aos-delay="200">
         <h1>Jeumpa Auto Spray</h1>
         <p>Spesialis Body Repair & Repaint Profesional</p>
         <a href="#galeri" class="hero-button">Lihat Galeri</a>
       </div>
     </header>
 
-    <!-- Konten Utama -->
+    <!-- Main Content -->
     <main class="container">
-      <!-- Tentang Kami -->
+      <!-- About -->
       <section id="tentang" data-aos="fade-up" data-aos-delay="200">
         <h2>Tentang Kami</h2>
         <p>
@@ -71,7 +72,7 @@
         </p>
       </section>
 
-      <!-- Layanan -->
+      <!-- Services -->
       <section id="layanan" data-aos="fade-up" data-aos-delay="200">
         <h2>Layanan</h2>
         <ul>
@@ -82,31 +83,30 @@
         </ul>
       </section>
 
-      <!-- Galeri -->
+      <!-- Gallery -->
       <section id="galeri" data-aos="fade-up" data-aos-delay="200">
         <h2>Galeri Hasil Kerja</h2>
-        <div class="galeri-container">
-          <div class="foto-item">
-            <img src="images/repaint-1.jpg" alt="Pekerjaan 1" />
-            <p>Pengecatan full body Toyota Avanza</p>
-          </div>
-          <div class="foto-item">
-            <img src="images/repaint-2.jpg" alt="Pekerjaan 2" />
-            <p>Perbaikan bodi pintu Honda Jazz</p>
-          </div>
-          <div class="foto-item">
-            <img src="images/repaint-3.jpg" alt="Pekerjaan 3" />
-            <p>Poles & detailing Mitsubishi Xpander</p>
-          </div>
-        </div>
+        <div class="galeri-container" id="galeriContainer"></div>
       </section>
 
-      <!-- Kontak -->
+      <!-- Contact -->
       <section id="kontak" data-aos="fade-up" data-aos-delay="200">
         <h2>Kontak Kami</h2>
-        <p>Lokasi: Jl. Contoh No. 123, Banda Aceh</p>
-        <p>WhatsApp: 0895-4030-10139</p>
-        <p>Email: jeumpaautospray@email.com</p>
+        <address>
+          <p>Jl. Contoh No. 123, Banda Aceh</p>
+          <p>
+            WA:
+            <a href="https://wa.me/62895403010139" target="_blank"
+              >0895-4030-10139</a
+            >
+          </p>
+          <p>
+            Email:
+            <a href="mailto:jeumpaautospray@email.com"
+              >jeumpaautospray@email.com</a
+            >
+          </p>
+        </address>
         <div class="tombol-wa-container">
           <a href="https://wa.me/62895403010139" target="_blank">
             <button class="whatsApp">Hubungi via WhatsApp</button>
@@ -117,68 +117,98 @@
 
     <!-- Lightbox -->
     <div id="lightbox" class="lightbox">
-      <span class="close">&times;</span>
-      <img class="lightbox-content" id="lightbox-img" />
+      <span class="close" aria-label="Tutup">&times;</span>
+      <img id="lightbox-img" class="lightbox-content" alt="" />
     </div>
 
     <!-- Footer -->
     <footer class="container">
       <p>&copy; 2025 Jeumpa Auto Spray. All rights reserved.</p>
+      <address>
+        <p>Jl. Contoh No. 123, Banda Aceh</p>
+        <p>WA: <a href="https://wa.me/62895403010139">0895-4030-10139</a></p>
+        <p>
+          Email:
+          <a href="mailto:jeumpaautospray@email.com"
+            >jeumpaautospray@email.com</a
+          >
+        </p>
+      </address>
     </footer>
 
-    <!-- Tombol Scroll ke Atas -->
-    <button id="scrollTopBtn" title="Kembali ke atas">↑</button>
+    <!-- Scroll-to-Top Button -->
+    <button
+      id="scrollTopBtn"
+      class="scroll-top-button"
+      aria-label="Kembali ke atas">
+      ↑
+    </button>
 
-    <!-- Script JS -->
-    <script>
-      const lightbox = document.getElementById("lightbox");
-      const lightboxImg = document.getElementById("lightbox-img");
-      const closeBtn = document.querySelector(".close");
-      const images = document.querySelectorAll(".galeri-container img");
-
-      images.forEach((img) => {
-        img.addEventListener("click", () => {
-          lightbox.style.display = "block";
-          lightboxImg.src = img.src;
-          lightboxImg.alt = img.alt;
-        });
-      });
-
-      closeBtn.addEventListener("click", () => {
-        lightbox.style.display = "none";
-      });
-
-      lightbox.addEventListener("click", (e) => {
-        if (e.target === lightbox) {
-          lightbox.style.display = "none";
-        }
-      });
-
-      function toggleMenu() {
-        const nav = document.getElementById("navMenu");
-        nav.classList.toggle("show");
-      }
-
-      const scrollBtn = document.getElementById("scrollTopBtn");
-      window.onscroll = function () {
-        if (
-          document.body.scrollTop > 300 ||
-          document.documentElement.scrollTop > 300
-        ) {
-          scrollBtn.style.display = "block";
-        } else {
-          scrollBtn.style.display = "none";
-        }
-      };
-
-      scrollBtn.onclick = function () {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      };
-    </script>
-
+    <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
+      // Initialize AOS
       AOS.init();
+
+      // Hamburger menu toggle
+      document
+        .getElementById("hamburgerMenu")
+        .addEventListener("click", function () {
+          this.classList.toggle("active");
+          document.getElementById("navMenu").classList.toggle("show");
+        });
+
+      // Scroll-to-top button
+      const scrollBtn = document.getElementById("scrollTopBtn");
+      window.addEventListener("scroll", () =>
+        scrollBtn.classList.toggle("show", window.scrollY > 300)
+      );
+      scrollBtn.addEventListener("click", () =>
+        window.scrollTo({ top: 0, behavior: "smooth" })
+      );
+
+      // Lightbox functionality
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImg = document.getElementById("lightbox-img");
+      document.querySelectorAll(".galeri-container img").forEach((img) => {
+        img.addEventListener("click", () => {
+          lightboxImg.src = img.src;
+          lightboxImg.alt = img.alt;
+          lightbox.style.display = "flex";
+        });
+      });
+      document
+        .querySelector(".lightbox .close")
+        .addEventListener("click", () => (lightbox.style.display = "none"));
+      lightbox.addEventListener("click", (e) => {
+        if (e.target === lightbox) lightbox.style.display = "none";
+      });
+
+      // Dynamic gallery load
+      const galeriData = [
+        {
+          src: "images/repaint-1.jpg",
+          alt: "Pekerjaan 1",
+          desc: "Pengecatan full body Toyota Avanza",
+        },
+        {
+          src: "images/repaint-2.jpg",
+          alt: "Pekerjaan 2",
+          desc: "Perbaikan bodi pintu Honda Jazz",
+        },
+        {
+          src: "images/repaint-3.jpg",
+          alt: "Pekerjaan 3",
+          desc: "Poles & detailing Mitsubishi Xpander",
+        },
+      ];
+      const galeriContainer = document.getElementById("galeriContainer");
+      galeriData.forEach((item) => {
+        const div = document.createElement("div");
+        div.className = "foto-item";
+        div.innerHTML = `<img src="${item.src}" alt="${item.alt}"><p>${item.desc}</p>`;
+        galeriContainer.appendChild(div);
+      });
     </script>
   </body>
 </html>
