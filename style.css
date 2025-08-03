@@ -159,10 +159,23 @@ img {
 
 .logo {
   font-family: sans-serif;
-  font-size: 1.5rem;
   letter-spacing: 2px;
   color: var(--accent-color);
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 800;
+  font-size: 1.2rem;
+  font-family: sans-serif;
+}
+
+.logo-img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #da0f0f;
 }
 
 .nav-links {
