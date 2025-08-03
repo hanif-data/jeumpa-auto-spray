@@ -73,3 +73,29 @@ footer {
     font-size: 18px;
   }
 }
+
+.galeri-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.galeri-container img {
+  width: 300px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.galeri-container img:hover {
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .galeri-container img {
+    width: 100%;
+  }
+}
