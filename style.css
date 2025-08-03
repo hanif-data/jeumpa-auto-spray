@@ -10,95 +10,7 @@
   --accent-hover: #e0a800;
 }
 
-/* LAYOUT CONTAINER DESKTOP (≥1200px) */
-.container {
-  width: 90%;
-  max-width: 1280px;
-  margin-inline: auto;
-  padding-inline: 1rem;
-}
-
-/* PENINGKATAN NAVBAR DI DESKTOP */
-@media (min-width: 1200px) {
-  .navbar-container {
-    gap: 2rem;
-    padding-inline: 2rem;
-  }
-
-  .nav-links {
-    gap: 3rem;
-    letter-spacing: 1px;
-  }
-
-  .hamburger {
-    display: none; /* sembunyikan hamburger di desktop, gunakan nav-links */
-  }
-}
-
-/* PENAMBATAN CONTAINER KE SETIAP SECTION UTAMA */
-main > section,
-.hero {
-  margin-inline: auto;
-}
-
-/* UKURAN MAX HERO CONTENT */
-.hero-content {
-  max-width: 800px;
-  margin-inline: auto;
-}
-
-/* GRID LAYANAN UNTUK DESKTOP */
-@media (min-width: 768px) {
-  #layanan ul {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
-    padding-inline: 0;
-    list-style: none;
-  }
-  #layanan ul li {
-    background-color: #262626;
-    padding: 1.2rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.05);
-    color: #eee;
-    font-size: 1.05rem;
-  }
-}
-
-/* GALERI LEBAR PENUH + TEKS OSING*/
-.galeri-container {
-  margin-inline: auto;
-}
-
-@media (min-width: 1200px) {
-  section#galeri {
-    padding-block: 5rem;
-  }
-  .galeri-container {
-    gap: 2.5rem;
-  }
-}
-
-/* FOOTER LEBAR FIT & TERTATA */
-footer {
-  max-width: 1280px;
-  margin-inline: auto;
-}
-
-/* SUPER VISUAL HERO */
-@media (min-width: 1200px) {
-  .hero {
-    background-attachment: fixed;
-    min-height: calc(100vh - 80px);
-    display: flex;
-  }
-
-  .hero-content {
-    background-color: rgba(0, 0, 0, 0.5);
-  }
-}
-
+/* TYPOGRAPHY & BASE */
 html {
   scroll-behavior: smooth;
   background-color: #121212;
@@ -140,6 +52,19 @@ img {
   display: block;
 }
 
+/* LAYOUT CONTAINERS */
+.container {
+  width: 90%;
+  max-width: 1280px;
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+main > section,
+.hero {
+  margin-inline: auto;
+}
+
 /* NAVBAR */
 .navbar {
   position: sticky;
@@ -158,16 +83,15 @@ img {
 }
 
 .logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   font-family: sans-serif;
+  font-weight: 800;
+  font-size: 1.2rem;
   letter-spacing: 2px;
   color: var(--accent-color);
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-weight: 800;
-  font-size: 1.2rem;
-  font-family: sans-serif;
 }
 
 .logo-img {
@@ -187,7 +111,6 @@ img {
 .nav-links li a {
   position: relative;
   display: inline-block;
-  color: white;
   font-weight: 500;
   padding-bottom: 2px;
   transition: color 0.3s ease;
@@ -198,8 +121,8 @@ img {
   position: absolute;
   left: 0;
   bottom: -5px;
+  width: 0;
   height: 2px;
-  width: 0%;
   background: var(--accent-color);
   transition: width 0.3s ease;
 }
@@ -213,15 +136,65 @@ img {
   width: 100%;
 }
 
-/* HAMBURGER */
+/* HAMBURGER MENU */
 .hamburger {
   display: none;
-  font-size: 2rem;
-  color: white;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 20px;
   cursor: pointer;
+  z-index: 1001;
 }
 
-/* HERO */
+.hamburger span {
+  display: block;
+  height: 3px;
+  background: #fff;
+  border-radius: 2px;
+  transition: 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* RESPONSIVE NAV */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: #222;
+    padding: 1rem;
+    border-radius: 10px;
+    z-index: 1000;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin: 0.5rem 0;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
+/* HERO SECTION */
 .hero {
   background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)),
     url("images/hero.jpg") center/cover no-repeat;
@@ -230,11 +203,11 @@ img {
   align-items: center;
   justify-content: center;
   text-align: center;
-  color: white;
-  background-attachment: fixed;
+  color: #fff;
 }
 
 .hero-content {
+  max-width: 800px;
   background-color: rgba(0, 0, 0, 0.4);
   padding: 2rem;
   border-radius: 10px;
@@ -270,7 +243,7 @@ img {
   transform: scale(1.05);
 }
 
-/* SECTION */
+/* SECTION STYLES */
 section {
   padding: 4rem 2rem;
   max-width: 1000px;
@@ -280,11 +253,32 @@ section {
   box-shadow: 0 4px 20px rgba(255, 255, 255, 0.05);
 }
 
-/* GALERI */
+/* SERVICES GRID */
+@media (min-width: 768px) {
+  #layanan ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    list-style: none;
+    padding: 0;
+  }
+
+  #layanan ul li {
+    background-color: #262626;
+    padding: 1.2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.05);
+    color: #eee;
+    font-size: 1.05rem;
+  }
+}
+
+/* GALLERY */
 .galeri-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
+  margin-inline: auto;
 }
 
 .foto-item {
@@ -293,7 +287,7 @@ section {
   overflow: hidden;
   border: 1px solid #333;
   box-shadow: 0 6px 20px rgba(255, 255, 255, 0.05);
-  transition: all 0.4s ease;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .foto-item img {
@@ -314,7 +308,7 @@ section {
   text-align: center;
 }
 
-/* KONTAK */
+/* CONTACT SECTION */
 #kontak p {
   margin-bottom: 0.5rem;
 }
@@ -331,7 +325,6 @@ section {
   padding: 0.75rem 1.5rem;
   border-radius: 25px;
   cursor: pointer;
-  margin-top: 1rem;
   font-weight: 600;
   box-shadow: 0 4px 12px rgba(255, 193, 7, 0.4);
   letter-spacing: 1px;
@@ -347,7 +340,6 @@ section {
 .lightbox {
   display: none;
   position: fixed;
-  z-index: 1000;
   top: 0;
   left: 0;
   width: 100%;
@@ -355,12 +347,13 @@ section {
   background: rgba(0, 0, 0, 0.8);
   justify-content: center;
   align-items: center;
+  z-index: 1000;
 }
 
 .lightbox-content {
   max-width: 90%;
   max-height: 80%;
-  border: 4px solid white;
+  border: 4px solid #fff;
   border-radius: 10px;
 }
 
@@ -369,66 +362,82 @@ section {
   top: 40px;
   right: 60px;
   font-size: 3rem;
-  color: white;
+  color: #fff;
   cursor: pointer;
 }
 
-/* FOOTER */
-footer {
-  text-align: center;
-  padding: 2rem;
-  background-color: #0f0f0f;
-  color: #888;
-  font-size: 0.9rem;
-  margin-top: 2rem;
-  border-top: 1px solid #333;
-}
-
-/* SCROLL TOP */
-#scrollTopBtn {
+/* SCROLL-TO-TOP BUTTON */
+.scroll-top-button {
   position: fixed;
   bottom: 30px;
   right: 30px;
+  padding: 12px 16px;
+  font-size: 20px;
   background: var(--accent-color);
-  color: black;
-  padding: 0.6rem 1rem;
+  color: #000;
   border: none;
   border-radius: 50%;
-  font-size: 1.5rem;
-  display: none;
-  z-index: 1000;
   cursor: pointer;
-  font-weight: bold;
   box-shadow: 0 4px 15px rgba(255, 193, 7, 0.3);
-  transition: transform 0.3s ease;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.3s ease;
+  z-index: 1000;
 }
 
-#scrollTopBtn:hover {
+.scroll-top-button:focus {
+  outline: 3px solid #fff;
+  outline-offset: 4px;
+}
+
+
+.scroll-top-button.show {
+  opacity: 1;
+  visibility: visible;
   transform: scale(1.1);
-  background-color: var(--accent-hover);
 }
 
-/* RESPONSIVE */
-@media (max-width: 768px) {
+/* LAYOUT ENHANCEMENTS FOR LARGE SCREENS */
+@media (min-width: 1200px) {
+  /* Navbar container spacing */
+  .navbar-container {
+    gap: 2rem;
+    padding-inline: 2rem;
+  }
+
   .nav-links {
-    display: none;
-    flex-direction: column;
-    background-color: rgba(0, 0, 0, 0.9);
-    position: absolute;
-    right: 0;
-    top: 70px;
-    width: 200px;
-    padding: 1rem;
-    border-radius: 8px;
+    gap: 3rem;
+    letter-spacing: 1px;
   }
 
-  .nav-links.show {
-    display: flex;
-  }
-
+  /* Hide hamburger on desktop */
   .hamburger {
-    display: block;
+    display: none;
+  }
+
+  /* Hero fixed background */
+  .hero {
+    background-attachment: fixed;
+    min-height: calc(100vh - 80px);
+  }
+
+  /* Hero inner content backdrop */
+  .hero-content {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  /* Section and gallery padding */
+  section#galeri {
+    padding-block: 5rem;
+  }
+
+  .galeri-container {
+    gap: 2.5rem;
+  }
+
+  /* Footer width */
+  footer {
+    max-width: 1280px;
+    margin-inline: auto;
   }
 }
-
-@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap");
