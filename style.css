@@ -34,3 +34,13 @@ footer {
   text-align: center;
   padding: 10px;
 }
+
+.whatsApp {
+  padding: 10px 20px;
+  background-color: #25d366;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
