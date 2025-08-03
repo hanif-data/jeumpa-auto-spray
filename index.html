@@ -7,6 +7,20 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <nav class="navbar">
+      <div class="navbar-container">
+        <div class="logo">Jeumpa Auto Spray</div>
+
+        <!-- Ikon hamburger -->
+        <div class="hamburger" onclick="toggleMenu()"=;</div>
+
+        <ul class="nav-links" id="navMenu">
+          <li><a href="#galeri">Galeri</a></li>
+          <li><a href="#kontak">Kontak</a></li>
+        </ul>
+      </div>
+    </nav>
+
     <header class="hero">
       <div class="hero-content">
         <h1>Jeumpa Auto Spray</h1>
@@ -107,6 +121,11 @@
           lightbox.style.display = "none";
         }
       });
+
+      function toggleMenu() {
+        const nav = document.getElementById("navMenu");
+        nav.classList.toggle("show");
+      }
     </script>
   </body>
 </html>
