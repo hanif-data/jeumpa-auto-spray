@@ -39,10 +39,18 @@
       <section id="galeri">
         <h2>Galeri Hasil Kerja</h2>
         <div class="galeri-container">
-          <img src="images/repaint-1.jpg" alt="Pekerjaan 1" />
-          <img src="images/repaint-2.jpg" alt="Pekerjaan 2" />
-          <img src="images/repaint-3.jpg" alt="Pekerjaan 3" />
-          <img src="images/repaint-4.jpg" alt="Pekerjaan 4" />
+          <div class="foto-item">
+            <img src="images/repaint-1.jpg" alt="Pekerjaan 1" />
+            <p>Pengecatan full body Toyota Avanza</p>
+          </div>
+          <div class="foto-item">
+            <img src="images/repaint-2.jpg" alt="Pekerjaan 2" />
+            <p>Perbaikan bodi pintu Honda Jazz</p>
+          </div>
+          <div class="foto-item">
+            <img src="images/repaint-3.jpg" alt="Pekerjaan 3" />
+            <p>Poles & detailing Mitsubishi Xpander</p>
+          </div>
         </div>
       </section>
 
@@ -57,8 +65,40 @@
       </section>
     </main>
 
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+      <span class="close">&times;</span>
+      <img class="lightbox-content" id="lightbox-img" />
+    </div>
+
     <footer>
       <p>&copy; 2025 Jeumpa Auto Spray. All rights reserved.</p>
     </footer>
+
+    <script>
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImg = document.getElementById("lightbox-img");
+      const closeBtn = document.querySelector(".close");
+      const images = document.querySelectorAll(".galeri-container img");
+
+      images.forEach((img) => {
+        img.addEventListener("click", () => {
+          lightbox.style.display = "block";
+          lightboxImg.src = img.src;
+          lightboxImg.alt = img.alt;
+        });
+      });
+
+      closeBtn.addEventListener("click", () => {
+        lightbox.style.display = "none";
+      });
+
+      // Klik di luar gambar untuk menutup
+      lightbox.addEventListener("click", (e) => {
+        if (e.target === lightbox) {
+          lightbox.style.display = "none";
+        }
+      });
+    </script>
   </body>
 </html>
