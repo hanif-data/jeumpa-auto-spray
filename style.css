@@ -44,3 +44,32 @@ footer {
   font-size: 16px;
   cursor: pointer;
 }
+
+/* === Responsive untuk HP (layar kecil) === */
+@media (max-width: 768px) {
+  header,
+  main,
+  footer {
+    padding: 10px;
+    text-align: center;
+  }
+
+  nav a {
+    display: block;
+    margin: 5px 0;
+  }
+
+  section ul {
+    padding-left: 20px;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  button {
+    width: 100%;
+    font-size: 18px;
+  }
+}
