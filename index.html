@@ -3,212 +3,305 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Jeumpa Auto Spray - Bengkel Spesialis Body Repair dan Cat Mobil Profesional di Banda Aceh." />
-    <title>
-      Jeumpa Auto Spray | Spesialis Cat & Body Repair Mobil Banda Aceh
-    </title>
+    <title>Jeumpa Auto Spray</title>
 
-    <!-- Open Graph Meta Tags -->
-    <meta
-      property="og:title"
-      content="Jeumpa Auto Spray | Spesialis Cat & Body Repair Mobil Banda Aceh" />
-    <meta
-      property="og:description"
-      content="Bengkel spesialis body repair & cat mobil profesional di Banda Aceh. Hasil rapi, warna presisi, dan pelayanan terpercaya." />
-    <meta
-      property="og:image"
-      content="https://jeumpaautospray.github.io/images/og-thumbnail.jpg" />
-    <meta property="og:url" content="https://jeumpaautospray.github.io/" />
-    <meta property="og:type" content="website" />
-    <meta property="og:locale" content="id_ID" />
-
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+    <!-- Fonts & Icons -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Montserrat:wght@400;700&family=Poppins:wght@300;400;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
       rel="stylesheet" />
-  </head>
-  <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-      <div class="navbar-container container">
-        <a href="/" class="logo">
-          <img src="images/logo.jpg" alt="Logo Jeumpa" class="logo-img" />
-          <span>Jeumpa Auto Spray</span>
-        </a>
-        <div class="hamburger" id="hamburgerMenu">
-          <span></span><span></span><span></span>
-        </div>
-        <ul class="nav-links" id="navMenu">
-          <li><a href="#galeri">Galeri</a></li>
-          <li><a href="#kontak">Kontak</a></li>
-        </ul>
-      </div>
-    </nav>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
-    <!-- Hero Section -->
-    <header class="hero">
-      <div
-        class="hero-content container"
-        data-aos="fade-up"
-        data-aos-delay="200">
-        <h1>Jeumpa Auto Spray</h1>
-        <p>Spesialis Body Repair & Repaint Profesional</p>
-        <a href="#galeri" class="hero-button">Lihat Galeri</a>
+    <!-- CSS Libraries -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="libs/aos/aos.css" />
+    <link rel="stylesheet" href="libs/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="libs/twentytwenty/css/twentytwenty.css" />
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="container header__inner">
+        <a href="#" class="logo">
+          <img src="images/logo.jpg" alt="Jeumpa Auto Spray Logo" />
+        </a>
+
+        <nav class="nav">
+          <ul class="nav__list">
+            <li><a href="#beranda">Beranda</a></li>
+            <li><a href="#layanan">Layanan</a></li>
+            <li><a href="#galeri">Galeri</a></li>
+            <li><a href="#testimoni">Testimoni</a></li>
+            <li><a href="#kontak">Kontak</a></li>
+          </ul>
+        </nav>
+
+        <a href="#kontak" class="btn header__cta">Hubungi Kami</a>
+
+        <button class="menu-toggle" aria-label="Toggle Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
     </header>
 
-    <!-- Main Content -->
-    <main class="container">
-      <!-- About -->
-      <section id="tentang" data-aos="fade-up" data-aos-delay="200">
-        <h2>Tentang Kami</h2>
-        <p>
-          Jeumpa Auto Spray adalah bengkel spesialis perbaikan bodi mobil dan
-          pengecatan ulang dengan hasil profesional dan rapi.
-        </p>
-      </section>
+    <!-- Hero -->
+    <section id="beranda" class="hero">
+      <div class="hero__overlay"></div>
+      <div
+        class="container hero__content"
+        data-aos="fade-down"
+        data-aos-duration="1000">
+        <h1>Jeumpa Auto Spray</h1>
+        <p>Spesialis Body Repair & Repaint Profesional di Banda Aceh</p>
+        <a href="#kontak" class="btn hero__btn">Booking Sekarang</a>
+      </div>
+    </section>
 
-      <!-- Services -->
-      <section id="layanan" data-aos="fade-up" data-aos-delay="200">
-        <h2>Layanan</h2>
-        <ul>
-          <li>Perbaikan body mobil penyok</li>
-          <li>Pengecatan ulang seluruh bodi</li>
-          <li>Poles & detailing mobil</li>
-          <li>Custom warna cat mobil</li>
-        </ul>
-      </section>
-
-      <!-- Gallery -->
-      <section id="galeri" data-aos="fade-up" data-aos-delay="200">
-        <h2>Galeri Hasil Kerja</h2>
-        <div class="galeri-container" id="galeriContainer"></div>
-      </section>
-
-      <!-- Contact -->
-      <section id="kontak" data-aos="fade-up" data-aos-delay="200">
-        <h2>Kontak Kami</h2>
-        <address>
-          <p>Jl. Contoh No. 123, Banda Aceh</p>
+    <!-- About -->
+    <section id="about" class="about section">
+      <div class="container about__inner">
+        <div class="about__text" data-aos="fade-right" data-aos-duration="800">
+          <h2>Mengapa Memilih Jeumpa Auto Spray?</h2>
           <p>
-            WA:
-            <a href="https://wa.me/62895403010139" target="_blank"
-              >0895-4030-10139</a
-            >
+            Kami mengedepankan kualitas, kecepatan, dan teknologi terkini dalam
+            setiap layanan body repair dan repaint. Dengan tenaga ahli
+            berpengalaman serta peralatan modern, mobil Anda akan kembali tampil
+            seperti baru.
           </p>
-          <p>
-            Email:
-            <a href="mailto:jeumpaautospray@email.com"
-              >jeumpaautospray@email.com</a
-            >
-          </p>
-        </address>
-        <div class="tombol-wa-container">
-          <a href="https://wa.me/62895403010139" target="_blank">
-            <button class="whatsApp">Hubungi via WhatsApp</button>
-          </a>
+          <ul class="about__features">
+            <li data-aos="fade-up" data-aos-delay="200">
+              <i class="fas fa-tools"></i>
+              <span>Teknologi & Peralatan Modern</span>
+            </li>
+            <li data-aos="fade-up" data-aos-delay="400">
+              <i class="fas fa-user-check"></i>
+              <span>Tenaga Ahli Bersertifikat</span>
+            </li>
+            <li data-aos="fade-up" data-aos-delay="600">
+              <i class="fas fa-shield-alt"></i>
+              <span>Garansi Hasil Kerja</span>
+            </li>
+          </ul>
         </div>
-      </section>
-    </main>
 
-    <!-- Lightbox -->
-    <div id="lightbox" class="lightbox">
-      <span class="close" aria-label="Tutup">&times;</span>
-      <img id="lightbox-img" class="lightbox-content" alt="" />
-    </div>
+        <div class="about__image" data-aos="fade-left" data-aos-duration="800">
+          <img
+            src="images/about-illustration.png"
+            alt="Ilustrasi Teknologi Modern" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section id="layanan" class="services section">
+      <div class="container">
+        <h2 class="section-title" data-aos="fade-up">Layanan Kami</h2>
+        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+          Kami menawarkan berbagai layanan terbaik untuk perawatan dan perbaikan
+          body mobil Anda.
+        </p>
+
+        <div class="services__grid">
+          <div class="service" data-aos="zoom-in" data-aos-delay="100">
+            <i class="fas fa-car-crash service__icon"></i>
+            <h3>Body Repair</h3>
+            <p>
+              Perbaikan kerusakan body akibat tabrakan, penyok, dan goresan
+              besar.
+            </p>
+          </div>
+
+          <div class="service" data-aos="zoom-in" data-aos-delay="200">
+            <i class="fas fa-spray-can service__icon"></i>
+            <h3>Repaint Full & Panel</h3>
+            <p>
+              Pengecatan ulang seluruh body atau panel tertentu dengan hasil
+              halus & merata.
+            </p>
+          </div>
+
+          <div class="service" data-aos="zoom-in" data-aos-delay="300">
+            <i class="fas fa-fill-drip service__icon"></i>
+            <h3>Dempul & Epoxy</h3>
+            <p>
+              Menutup permukaan tidak rata & mencegah karat dengan lapisan epoxy
+              berkualitas.
+            </p>
+          </div>
+
+          <div class="service" data-aos="zoom-in" data-aos-delay="400">
+            <i class="fas fa-car service__icon"></i>
+            <h3>Detailing</h3>
+            <p>
+              Pembersihan mendalam & pelindung cat untuk hasil kinclong seperti
+              baru.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section id="galeri" class="gallery section">
+      <div class="container">
+        <h2 class="section-title" data-aos="fade-up">
+          Galeri Sebelum & Sesudah
+        </h2>
+        <div
+          class="before-after-wrapper"
+          data-aos="fade-up"
+          data-aos-delay="200">
+          <div class="twentytwenty-container">
+            <img src="images/car-before1.jpg" alt="Sebelum Pengecatan" />
+            <img src="images/car-after1.jpg" alt="Sesudah Pengecatan" />
+          </div>
+          <div class="twentytwenty-container">
+            <img src="images/car-before2.jpg" alt="Sebelum Repair" />
+            <img src="images/car-after2.jpg" alt="Sesudah Repair" />
+          </div>
+          <div class="twentytwenty-container">
+            <img src="images/car-before3.jpg" alt="Sebelum Detailing" />
+            <img src="images/car-after3.jpg" alt="Sesudah Detailing" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimoni" class="testimonials section">
+      <div class="container">
+        <h2 class="section-title" data-aos="fade-up">Testimoni Pelanggan</h2>
+
+        <div class="swiper mySwiper" data-aos="fade-up" data-aos-delay="100">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide testimonial">
+              <img src="images/user1.jpg" alt="Andi" class="testimonial__img" />
+              <blockquote>
+                <p>
+                  "Hasil pengecatan luar biasa, mobil saya terlihat seperti
+                  baru!"
+                </p>
+                <footer>- Andi, Banda Aceh</footer>
+              </blockquote>
+            </div>
+            <div class="swiper-slide testimonial">
+              <img src="images/user2.jpg" alt="Dewi" class="testimonial__img" />
+              <blockquote>
+                <p>
+                  "Pekerjaan sangat rapi dan cepat, saya sangat puas dengan
+                  pelayanannya."
+                </p>
+                <footer>- Dewi, Ulee Kareng</footer>
+              </blockquote>
+            </div>
+            <div class="swiper-slide testimonial">
+              <img
+                src="images/user3.jpg"
+                alt="Rizal"
+                class="testimonial__img" />
+              <blockquote>
+                <p>
+                  "Detailing-nya mantap, mobil saya mengkilap kayak baru keluar
+                  showroom."
+                </p>
+                <footer>- Rizal, Lampriet</footer>
+              </blockquote>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="kontak" class="contact section">
+      <div class="container">
+        <h2 class="section-title" data-aos="fade-up">Hubungi Kami</h2>
+        <div class="contact-content">
+          <form class="contact-form" data-aos="fade-right" data-aos-delay="100">
+            <div class="form-group">
+              <label for="nama">Nama</label>
+              <input type="text" id="nama" name="nama" required />
+            </div>
+            <div class="form-group">
+              <label for="telepon">No. Telepon</label>
+              <input type="tel" id="telepon" name="telepon" required />
+            </div>
+            <div class="form-group">
+              <label for="pesan">Pesan</label>
+              <textarea id="pesan" name="pesan" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="btn">Kirim Pesan</button>
+            <a
+              href="https://wa.me/6281234567890"
+              target="_blank"
+              class="btn btn-wa"
+              >Chat via WhatsApp</a
+            >
+          </form>
+
+          <div class="contact-map" data-aos="fade-left" data-aos-delay="200">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.954490012217!2d95.31929691539225!3d5.548290135568889!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30403710f66aa6e3%3A0x11c1852b117d7c9!2sJeumpa%20Auto%20Spray!5e0!3m2!1sid!2sid!4v1687770000000"
+              width="100%"
+              height="300"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Footer -->
-    <footer class="container">
-      <p>&copy; 2025 Jeumpa Auto Spray. All rights reserved.</p>
-      <address>
-        <p>Jl. Contoh No. 123, Banda Aceh</p>
-        <p>WA: <a href="https://wa.me/62895403010139">0895-4030-10139</a></p>
-        <p>
-          Email:
-          <a href="mailto:jeumpaautospray@email.com"
-            >jeumpaautospray@email.com</a
-          >
-        </p>
-      </address>
+    <footer class="footer">
+      <div class="container footer-container">
+        <div class="footer-brand">
+          <h3>Jeumpa Auto Spray</h3>
+          <p>Spesialis Body Repair & Repaint Mobil di Banda Aceh.</p>
+        </div>
+
+        <div class="footer-info">
+          <h4>Kontak</h4>
+          <ul>
+            <li>
+              <i class="fa fa-map-marker"></i> Jl. Contoh No. 123, Banda Aceh
+            </li>
+            <li><i class="fa fa-phone"></i> 0812-3456-7890</li>
+            <li><i class="fa fa-envelope"></i> info@jeumpaautospray.com</li>
+          </ul>
+        </div>
+
+        <div class="footer-social">
+          <h4>Ikuti Kami</h4>
+          <div class="social-links">
+            <a href="#"><i class="fa fa-facebook"></i></a>
+            <a href="#"><i class="fa fa-instagram"></i></a>
+            <a href="#"><i class="fa fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 Jeumpa Auto Spray. All rights reserved.</p>
+      </div>
     </footer>
 
-    <!-- Scroll-to-Top Button -->
-    <button
-      id="scrollTopBtn"
-      class="scroll-top-button"
-      aria-label="Kembali ke atas">
-      ↑
-    </button>
-
     <!-- Scripts -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="libs/aos/aos.js"></script>
+    <script src="libs/swiper/swiper-bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="libs/twentytwenty/js/jquery.event.move.js"></script>
+    <script src="libs/twentytwenty/js/jquery.twentytwenty.js"></script>
+    <script src="js/script.js"></script>
     <script>
-      // Initialize AOS
-      AOS.init();
-
-      // Hamburger menu toggle
-      document
-        .getElementById("hamburgerMenu")
-        .addEventListener("click", function () {
-          this.classList.toggle("active");
-          document.getElementById("navMenu").classList.toggle("show");
-        });
-
-      // Scroll-to-top button
-      const scrollBtn = document.getElementById("scrollTopBtn");
-      window.addEventListener("scroll", () =>
-        scrollBtn.classList.toggle("show", window.scrollY > 300)
-      );
-      scrollBtn.addEventListener("click", () =>
-        window.scrollTo({ top: 0, behavior: "smooth" })
-      );
-
-      // Lightbox functionality
-      const lightbox = document.getElementById("lightbox");
-      const lightboxImg = document.getElementById("lightbox-img");
-      document.querySelectorAll(".galeri-container img").forEach((img) => {
-        img.addEventListener("click", () => {
-          lightboxImg.src = img.src;
-          lightboxImg.alt = img.alt;
-          lightbox.style.display = "flex";
-        });
-      });
-      document
-        .querySelector(".lightbox .close")
-        .addEventListener("click", () => (lightbox.style.display = "none"));
-      lightbox.addEventListener("click", (e) => {
-        if (e.target === lightbox) lightbox.style.display = "none";
-      });
-
-      // Dynamic gallery load
-      const galeriData = [
-        {
-          src: "images/repaint-1.jpg",
-          alt: "Pekerjaan 1",
-          desc: "Pengecatan full body Toyota Avanza",
-        },
-        {
-          src: "images/repaint-2.jpg",
-          alt: "Pekerjaan 2",
-          desc: "Perbaikan bodi pintu Honda Jazz",
-        },
-        {
-          src: "images/repaint-3.jpg",
-          alt: "Pekerjaan 3",
-          desc: "Poles & detailing Mitsubishi Xpander",
-        },
-      ];
-      const galeriContainer = document.getElementById("galeriContainer");
-      galeriData.forEach((item) => {
-        const div = document.createElement("div");
-        div.className = "foto-item";
-        div.innerHTML = `<img src="${item.src}" alt="${item.alt}"><p>${item.desc}</p>`;
-        galeriContainer.appendChild(div);
-      });
+      AOS.init({ once: true });
     </script>
   </body>
 </html>
